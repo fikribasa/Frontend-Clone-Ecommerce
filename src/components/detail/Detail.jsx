@@ -9,19 +9,16 @@ import {
   Tooltip,
   Card
 } from "react-bootstrap";
-
-const detailBar = (props) => {
-  console.log("data",props.detailProducts)
+const detailBar = () => {
   return (
     <Fragment>
       <div className="pt-5" style={{ background: "#e4e4e4" }}>
         <Container className="mt-4">
-          {props.detailProducts.map(detail =>(
           <Row>
             <Col className="p-4" md={5}>
               <div>
                 <img
-                  src={detail.image}
+                  src="https://s3-ap-southeast-1.amazonaws.com/images.bro.do/media/870-1-ok-1.jpg"
                   alt=""
                   style={{ width: "600px", height: "600px" }}
                 ></img>
@@ -29,8 +26,8 @@ const detailBar = (props) => {
             </Col>
             <Col className="p-4" md={2}></Col>
             <Col className="p-4" md={5}>
-              <h3>{detail.name}</h3>
-                <span className="product-price">Rp. {detail.price}</span>
+              <h3>Bros Slide Full Green</h3>
+              <span className="product-price">Rp 195.000</span>
               <Form>
                 <Form.Group controlId="exampleForm.ControlSelect1" multiple>
                   <Form.Control
@@ -112,13 +109,29 @@ const detailBar = (props) => {
               <Card>
                 <Card.Body className="card-body">
                   <p>
-                    {detail.description}
+                    <strong>
+                      <ins>BRODO Independence Day Pack</ins>
+                    </strong>
+                    <br />
+                    Koleksi spesial bentuk perjuangan kami dalam wujud karya
+                    untuk hari kemerdekaan Indonesia ke-74.Kami ingin setiap
+                    orang yang memakainya bangga sebagai bangsa Indonesia dan
+                    menyiarkan karya-karya anak bangsa ke pelosok negeri dan
+                    dunia.
+                  </p>
+                  <p>
+                    Pake sendal pun bisa jadi cara menunjukan cinta dan
+                    apresiasi kita buat negri ini. Broslides Independence Day
+                    special edition warna merah dan putih yang melambangkan
+                    bendera Indonesia ini adalah salah satu pilihannya. Kenapa
+                    cowo harus malu-malu pake warna merah? Wear it proud
+                    brothers! Di rumah, di lapangan bola, atau ke musholla. -
+                    Synthetic Waterproof Upper - Super Comfort Phylon Outsole
                   </p>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
-          ))}
         </Container>
       </div>
     </Fragment>

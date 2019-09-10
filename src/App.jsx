@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Provider } from "react-redux";
+import {Provider} from 'react-redux'
 
 import Header from "./components/layout/header.jsx";
 import Footer from "./components/layout/footer";
@@ -8,7 +8,7 @@ import HomePage from "./components/page/homePage";
 import Collection from "./components/page/collection.jsx";
 import Detail from "./components/page/detail.jsx";
 
-import store from "./Publics/Redux/store.js";
+import store from './Publics/Redux/store.js'
 
 import "./App.css";
 
@@ -16,13 +16,14 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
+        
         <Route
           path="/"
           exact
-          render={(props) => {
+          render={() => {
             return (
               <Fragment>
-                <Header history={props.history} key={window.location.search}/>
+                <Header />
                 <HomePage />
               </Fragment>
             );
@@ -32,21 +33,17 @@ const App = () => {
             render={(props) => {
               return(
                 <Fragment>
-                  <Header headType="white" history={props.history} key={window.location.search}/>
+                  <Header headType="white"/>
                   <Collection {...props}/>
                 </Fragment>
               )
             }}
           />
         <Route
-        path="/product/:name"
-        render={(props) => {
-          return (
-            <Fragment>
-              <Header headType="white" history={props.history} key={window.location.search}/>
-              <Detail {...props}/>
-            </Fragment>
-          )
+        path="/product"
+        exact
+        render={() => {
+          return <Detail />;
         }}
       />
         <Footer />
